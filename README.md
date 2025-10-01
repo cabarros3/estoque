@@ -86,8 +86,8 @@ Projeto de gerenciamento de estoque com controle de entrada e saída de produtos
 
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/seu-repo.git
-cd seu-repo
+git clone https://github.com/cabarros3/estoque.git
+cd estoque
 ```
 2. Instale as dependências:
 ```bash
