@@ -22,7 +22,7 @@
     "prompt-sync": "^4.2.0"
   },
   "devDependencies": {
-    "@types/node": "^24.6.0",
+    "@types/node": "^24.6.1",
     "@types/prompt-sync": "^4.2.3",
     "typescript": "^5.9.3"
   }
