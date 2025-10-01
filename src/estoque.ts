@@ -1,6 +1,7 @@
 // import promptSync from "prompt-sync";
-import promptSync = require("prompt-sync");
-const entradaUser = promptSync({ sigint: false });
+const entradaUser = require("prompt-sync")({ sigint: false });
+// const promptSync = require("prompt-sync");
+// const entradaUser = promptSync
 
 // criar classe produto
 class Produto {
@@ -191,7 +192,7 @@ class Estoque {
 
     for (const produto of this.listaProdutos) {
       // usando o includes para pegar todos os produtos que possuem o termo
-      if (produto.getNome.toLowerCase().indexOf(termoDeBusca.toLowerCase())) {
+      if (produto.getNome.toLowerCase().includes(termoDeBusca.toLowerCase())) {
         encontrados.push(produto);
       }
     }
@@ -290,8 +291,9 @@ function menu() {
     console.log("3 - Registrar saída");
     console.log("4 - Listar produtos");
     console.log("5 - Gerar relatório de estoque");
-    console.log("6 - Mostrar produtos com estoque baixo");
-    console.log("7 - Pesquisar produto");
+    console.log("6 - Gerar relatório de entradas e saídas")
+    console.log("7 - Mostrar produtos com estoque baixo");
+    console.log("8 - Pesquisar produto");
     console.log("0 - Sair");
     opcao = entradaUser("Escolha uma opção: ")!;
 
@@ -331,10 +333,14 @@ function menu() {
         break;
 
       case "6":
-        estoque.mostrarProdutosEstoqueBaixo();
+        estoque.relatorioMovimentacoes();
         break;
 
       case "7":
+        estoque.mostrarProdutosEstoqueBaixo();
+        break;
+
+      case "8":
         const termo = entradaUser("Digite o nome do produto para buscar: ")!;
         estoque.pesquisarProduto(termo);
         break;
@@ -351,3 +357,7 @@ function menu() {
 
 // iniciar menu
 menu();
+function promptSync(arg0: { sigint: boolean; }) {
+  throw new Error("Function not implemented.");
+}
+
